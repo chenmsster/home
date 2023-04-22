@@ -51,6 +51,18 @@ function decryptEmail(encoded) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+	// 不动态获取。 add by mason
+	var iUpElements = document.querySelectorAll(".iUp");
+	iUpElements.forEach(function (element) {
+		iUp.up(element);
+	});
+
+	var avatarElement = document.querySelector(".js-avatar");
+	avatarElement.addEventListener('load', function () {
+		avatarElement.classList.add("show");
+	});
+
+	return;
 	// 获取一言数据
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function () {
