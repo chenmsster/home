@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title id="title"></title>
+    <meta name="keywords" content="网页导航">
+    <meta name="description" content="网页导航">
+    <link rel="stylesheet icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="naviStatic/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script type="text/javascript" src="js/jQuery.js"></script>
+    <script type="text/javascript" src="naviStatic/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/slideout.css">
+    <script>
+        var now = new Date().getTime();
+        document.write('<link href="css/style.css?v=' + now + '" rel="stylesheet" type="text/css"/>');
+    </script>
+</head>
+
+<body>
+    <main id="main" class="panel">
+        <div class="container">
+            <div class="search-box">
+                <br /><br /><br /><br />
+                <div class="inputDiv">
+                    <form id="form" action="https://bing.com/search" target="_self" onsubmit="return check()">
+                        <input onmouseover="this.focus()" onfocus="this.select()" id="inputText" type="text"
+                            placeholder="" name="q" size="30" />
+                        <button id="submitButton" class="submitButton" type="submit"></button>
+                    </form>
+                    <!-- 搜索提示词 -->
+                    <div id="searchlist">
+                        <ul id="list"></ul>
+                    </div>
+                </div>
+                <br /><br /><br /><br />
+                <!-- 书签 -->
+                <div id="folder" class="folder">
+                    <ul></ul>
+                </div>
+            </div>
+    </main>
+
+    <script type="text/javascript" src="js/slideout.min.js"></script>
+    <script type="text/javascript">
+        $(document).click(function (e) {
+            var Class = $(e.target).attr("class");
+            var Id = $(e.target).attr("id");
+            if (Class == 'panel slideout-panel slideout-panel-left' || Class == 'folder-item col-xs-3 col-sm-2' || Class == 'search-box' || Id == 'inputText' || Id == 'logo') {
+                slideout.close();
+            }
+        });
+    </script>
+
+</body>
+<script type="text/javascript">
+    document.write('<script src="js/main.js?v=' + now + '"><\/script\>');
+</script>
+
+</html>
